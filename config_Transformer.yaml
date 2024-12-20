@@ -1,0 +1,24 @@
+aug_flag: True                                      # whether to apply data augmentation
+aug_indicator:                                      # number of augmentation per SMILES. If no limitation, assign the indicator with None (leave it blank).
+
+file_path: 'data/EPS.csv'                           # data path (Ei/EPS/Nc/Xc)
+
+
+save_path: 'runs/save.pt'                           # checkpoint path
+best_model_path: 'runs/best_model.pt'               # best model save path
+
+data_ratio: 0.4                                     # The proportion of the total dataset used,1.0 means all data is used for modeling(0.4/0.6/0.8/1.0)
+k: 5                                                # k-fold cross-validation
+blocksize: 175                                      # max length of sequences after tokenization 411
+batch_size: 32                                      # batch size
+num_epochs: 200                                     # total number of epochs
+warmup_ratio: 0.05                                  # warmup ratio
+drop_rate: 0.1                                      # dropout
+lr_rate:  0.00005                                   # initial lr for LLRD and pretrained model lr otherwise
+lr_rate_reg: 0.0001                                 # regressor lr if LLRD is not used
+weight_decay: 0.01
+hidden_dropout_prob: 0.1                            # hidden layer dropout
+attention_probs_dropout_prob: 0.1                   # attention dropout
+tolerance: 1000                                     # tolerance of no improvement in performance before early stop
+num_workers: 0                                      # number of workers when loading data
+
