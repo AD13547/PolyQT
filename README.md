@@ -26,7 +26,7 @@ $ python -m pip install pennylane
 ```
 
 ### Dataset
-  Our four datasets are sourced from the paper "TransPolymer: A Transformer-based Language Model for Polymer Property Predictions." While the data augmentation techniques used in the baseline experiments are also based on this paper, our PolyQT model does not rely on data augmentation. All datasets are provided in the data folder.
+We used six publicly available datasets for training quantum models. The sequences of these datasets are related to polymers only, with the inputs being the SMILES of the polymers, which are then labeled by a polymer tokenizer as the inputs to PolyQT. Specifically, data for Glass Transition Temperature and Polymer Density were obtained from the PolyInfo database and are based on experimental measurements (Exp), while the other four properties—Ionization Energy, Dielectric Constant, Refractive Index, and Crystallization Tendency—were adopted from the work of Kuenneth et al. (2021) and are derived from density functional theory (DFT) calculations. This diversity in data sources enables us to assess the model’s performance across both experimentally measured and computationally simulated properties.All datasets are provided in the data folder.
 
 ### Quantum Component
 The model uses a quantum component with 8 qubits. In the experiments, different numbers of qubits (4, 5, 6, 7, and 8) were tested to evaluate the impact on performance.
